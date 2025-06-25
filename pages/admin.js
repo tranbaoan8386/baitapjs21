@@ -1,23 +1,23 @@
 import {
-    fetchPaginatedProducts,
-    fetchAllProducts,
-    createProduct,
-    removeProduct,
-    editProduct,
-    fetchProductById
+  fetchPaginatedProducts,
+  fetchAllProducts,
+  createProduct,
+  removeProduct,
+  editProduct,
+  fetchProductById
 } from '../controllers/admin/productController.js';
 import { getDataForm } from '../utils/form.js';
 import { validate } from '../utils/validate.js';
 const notyf = new Notyf({
-    duration: 3000,
-    position: {
-        x: 'right',
-        y: 'top'
-    }
+  duration: 3000,
+  position: {
+    x: 'right',
+    y: 'top'
+  }
 });
 
 function getElement(id) {
-    return document.getElementById(id);
+  return document.getElementById(id);
 }
 
 let currentPage = 1;
@@ -25,8 +25,8 @@ const limit = 4;
 const list = getElement("body-table");
 
 function renderProducts(page) {
-    fetchPaginatedProducts(page, limit).then(products => {
-        list.innerHTML = products.map(p => `
+  fetchPaginatedProducts(page, limit).then(products => {
+    list.innerHTML = products.map(p => `
       <div class="row bg-white mb-2 border border-white d-flex align-items-center justify-content-center shadow-custom">
         <div class="col-6 col-md-9">
           <div class="row d-flex align-items-center justify-content-center">
@@ -70,12 +70,12 @@ function renderProducts(page) {
         </div>
       </div>
     `).join('');
-        renderPagination(page, products.length);
-    });
+    renderPagination(page, products.length);
+  });
 }
 function renderPagination(page, itemCount) {
-    const pagination = getElement("pagination");
-    pagination.innerHTML = `
+  const pagination = getElement("pagination");
+  pagination.innerHTML = `
     <li class="page-item ${page === 1 ? 'disabled' : ''}">
       <a class="page-link" href="#" onclick="changePage(${page - 1})">Trước</a>
     </li>
@@ -87,39 +87,51 @@ function renderPagination(page, itemCount) {
 }
 
 window.changePage = function (newPage) {
-    if (newPage < 1) return;
-    currentPage = newPage;
-    renderProducts(currentPage);
+  if (newPage < 1) return;
+  currentPage = newPage;
+  renderProducts(currentPage);
 };
 
 getElement("btnThemSP").onclick = () => {
-    let product = getDataForm();
-    const errors = validate(product);
-    if (errors.length > 0) {
-        errors.forEach(err => notyf.error(err));
-        return;
-    }
-    createProduct(product);
-    $("#exampleModal").modal("hide");
-    renderProducts(currentPage)
-    notyf.success("Thêm sản phẩm thành công!");
+  let product = getDataForm();
+  const errors = validate(product);
+  if (errors.length > 0) {
+    errors.forEach(err => notyf.error(err));
+    return;
+  }
+  createProduct(product);
+  $("#exampleModal").modal("hide");
+  renderProducts(currentPage)
+  notyf.success("Thêm sản phẩm thành công!");
 }
 
 window.onDelete = function (id) {
-    if (confirm("Bạn chắc chắn muốn xóa sản phẩm này?")) {
-        removeProduct(id).then(() => {
-            renderProducts(currentPage);
-        });
+  Swal.fire({
+    title: 'Xác nhận xóa?',
+    text: "Hành động này không thể hoàn tác!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Xóa',
+    cancelButtonText: 'Hủy',
+    confirmButtonColor: '#d33',
+    cancelButtonColor: '#3085d6'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      removeProduct(id).then(() => {
+        notyf.success("Xóa sản phẩm thành công!");
+        renderProducts(currentPage);
+      });
     }
+  });
 };
 
 window.onEdit = function (id) {
-    fetchProductById(id).then(res => {
-        const sp = res.data;
-        alert(`Chỉnh sửa: ${sp.name}`);
-    });
+  fetchProductById(id).then(res => {
+    const sp = res.data;
+    alert(`Chỉnh sửa: ${sp.name}`);
+  });
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    renderProducts(currentPage);
+  renderProducts(currentPage);
 });
