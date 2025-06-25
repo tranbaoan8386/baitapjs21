@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
+    <link rel="stylesheet" href="../../public/css/admin.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="sidebar">
+            <button id="close-btn" class="close-sidebar"><i class="fas fa-times"></i></button>
+            <div class="d-flex align-items-center justify-content-center border-bottom">
+                <img class="img-logo" style="width: 100px;" src="../../public/img/logo.png" alt="">
+                <span class="user-info">NVH SHOP</span>
+            </div>
+            <div class="menu mt-3">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a class="text-decoration-none menu-a" href="">
+                            <div class="d-flex gap-3">
+                                <div class="menu-icon">
+                                    <i class="fa-solid fa-chart-simple"></i>
+                                </div>
+                                <div class="text-menu">
+                                    Thống kê
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="menu-a text-decoration-none" href="">
+                            <div class="d-flex gap-3">
+                                <div class="menu-icon">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                </div>
+                                <div class="text-menu">
+                                    Quản lý sản phẩm
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="text-decoration-none menu-a" href="">
+                            <div class="d-flex gap-3">
+                                <div class="menu-icon">
+                                    <i class="fa-solid fa-list"></i>
+                                </div>
+                                <div class="text-menu">
+                                    Quản lý danh mục
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="text-decoration-none menu-a" href="">
+                            <div class="d-flex gap-3">
+                                <div class="menu-icon">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div class="text-menu">
+                                    Quản lý đơn hàng
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="text-decoration-none menu-a" href="">
+                            <div class="d-flex gap-3">
+                                <div class="menu-icon">
+                                    <i class="fa-solid fa-circle-user"></i>
+                                </div>
+                                <div class="text-menu">
+                                    Quản lý tài khoản
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <nav class="navbar d-flex justify-content-between align-items-center justify-content-center">
+                <button id="toggle-btn" class="btn btn-sm me-2">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <input type="text" class="form-control w-50" placeholder="Search...">
+                <div class="menu-icons">
+                    <i class="fas fa-circle"></i>
+                    <i class="fas fa-circle"></i>
+                    <i class="fas fa-circle"></i>
+                </div>
+            </nav>
+            <div class="content-body p-2 p-md-4">
+                <div class="card">
+                    <div class="card-header text-center d-flex justify-content-between align-content-center">
+                        <h4 class="p-2">Quản lý sản phẩm</h4>
+                        <button type="button" class="btn btn-bg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Thêm mới
+                        </button>
+                    </div>
+                    <!-- modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm mới sản phẩm</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Tên sản phẩm:</label>
+                                        <input type="text" name="" id="name" class="form-control">
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Giá sản phẩm:</label>
+                                                <input type="number" name="" id="price" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Màn Hình:</label>
+                                                <input type="text" name="" id="screen" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Camera sau:</label>
+                                                <input type="text" name="" id="backCamera" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Camera trước:</label>
+                                                <input type="text" name="" id="frontCamera" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Mô tả sản phẩm:</label>
+                                        <input type="text" name="" id="desc" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Loại sản phẩm:</label>
+                                        <select class="form-select" id="type" aria-label="Chọn loại sản phẩm">
+                                            <option selected disabled>Chọn loại sản phẩm</option>
+                                            <option value="iphone">Iphone</option>
+                                            <option value="samsung">Samsung</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Link hình ảnh:</label>
+                                        <input type="text" name="" id="img" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Đóng</button>
+                                    <button type="button" id="btnThemSP" class="btn btn-primary">Thêm mới</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end modal -->
+                    <div class="card-body">
+                        <div class="header-table">
+                            <div class="row mb-2 pt-md-2 pb-md-2 fw-bold bg-warning border border-black">
+                                <div class="col-6 col-md-9">
+                                    <div class="row">
+                                        <div class="col-4 col-md-3 text-center">
+                                            Hình Ảnh
+                                        </div>
+                                        <div class="col-8 col-md-9">
+                                            <div class="row d-flex align-items-center">
+                                                <div class="col-12 col-md-4 text-center">
+                                                    Thông tin
+                                                </div>
+                                                <div class="col-12 d-none d-md-block col-md-4 text-center">
+                                                    Cấu hình
+                                                </div>
+                                                <div class="col-12 d-none d-md-block col-md-4 text-center">
+                                                    Mô tả
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="row">
+                                        <div class="col-4 col-md-6 p-0 text-center">
+                                            Giá
+                                        </div>
+                                        <div class="col-8 col-md-6 text-center">
+                                            Hành Động
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="body-table">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <nav class="mt-4">
+                            <ul class="pagination justify-content-center" id="pagination">
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="../../public/js/action_admin.js"></script>
+<script src="../../services/api.js"></script>
+<script type="module" src="../../pages/admin.js"></script>
+
+</html>
