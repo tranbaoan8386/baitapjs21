@@ -75,6 +75,7 @@
             background: rgb(244, 244, 244);
             transition: margin-left 0.3s;
             overflow: auto;
+            width: 100%;
         }
 
         .navbar {
