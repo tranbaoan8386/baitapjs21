@@ -1,0 +1,27 @@
+.product-image {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .product-info h2 {
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .product-info p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .product-info strong {
+    color: #ff6600;
+  }
+  
+  @media (max-width: 768px) {
+    .product-info {
+      margin-top: 20px;
+    }
+  }
+  
