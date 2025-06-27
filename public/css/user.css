@@ -145,3 +145,20 @@ footer {
     margin-top: 5px;
   }
 }
+@media (max-width: 576px) {
+  #featuredCarousel img {
+    height: 200px !important; /* Giảm chiều cao để vừa màn hình nhỏ */
+    object-fit: cover;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 45%;
+  }
+}
