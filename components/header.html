@@ -5,43 +5,62 @@
       class="navbar-brand fw-bold d-flex align-items-center"
       href="/NVHBASHOP/index.html"
     >
-      <img src="/NVHBASHOP/public/img/logo.png" width="45" class="me-2" />
+      <img src="/NVHBASHOP/public/img/logo.png" width="40" class="me-2" />
       <span class="logo-gradient-text">NVHBA SHOP</span>
     </a>
 
-    <!-- Nút Trang chủ -->
-    <a href="/NVHBASHOP/index.html" class="btn btn-outline-dark me-2">
-      <i class="fas fa-house me-1"></i> Trang chủ
-    </a>
+    <!-- Nút toggle cho mobile -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!-- Ô tìm kiếm (ngắn lại) -->
-    <form class="d-flex w-25 me-auto">
-      <input
-        id="searchInput"
-        class="form-control me-2"
-        type="search"
-        placeholder="Tìm kiếm..."
-      />
-      <button class="btn btn-outline-dark" type="submit">
-        <i class="fas fa-search"></i>
-      </button>
-    </form>
-
-    <!-- Giỏ hàng + Đăng nhập -->
-    <div class="d-flex align-items-center">
+    <!-- Nội dung navbar -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Nút Trang chủ -->
       <a
-        href="/NVHBASHOP/views/cart/cart.html"
-        class="btn btn-outline-dark me-2 position-relative"
+        href="/NVHBASHOP/index.html"
+        class="btn btn-outline-dark me-2 mt-2 mt-lg-0"
       >
-        <i class="fas fa-shopping-cart"></i>
-        <span
-          id="cartCount"
-          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-        >
-          0
-        </span>
+        <i class="fas fa-house me-1"></i> Trang chủ
       </a>
-      <a href="#" class="btn btn-bg">Đăng nhập</a>
+
+      <!-- Ô tìm kiếm -->
+      <form class="d-flex w-100 w-lg-25 me-auto mt-2 mt-lg-0">
+        <input
+          id="searchInput"
+          class="form-control me-2"
+          type="search"
+          placeholder="Tìm kiếm..."
+        />
+        <button class="btn btn-outline-dark" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <!-- Giỏ hàng + Đăng nhập -->
+      <div class="d-flex align-items-center mt-2 mt-lg-0">
+        <a
+          href="/NVHBASHOP/views/cart/cart.html"
+          class="btn btn-outline-dark me-2 position-relative"
+        >
+          <i class="fas fa-shopping-cart"></i>
+          <span
+            id="cartCount"
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          >
+            0
+          </span>
+        </a>
+        <a href="#" class="btn btn-bg">Đăng nhập</a>
+      </div>
     </div>
   </div>
 </nav>
