@@ -46,8 +46,7 @@ function filterProducts() {
 // Khi trang load xong
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await getProducts();
-    allProducts = response.data;
+    allProducts = await getProducts();
     renderProducts(allProducts);
   } catch (error) {
     console.error("Lỗi khi tải sản phẩm:", error);
