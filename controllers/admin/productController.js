@@ -8,7 +8,7 @@ export const fetchPaginatedProducts = (page, limit) => {
       return [];
     });
 };
-export const fetchAllProducts = () => getProducts();
+export const fetchAllProducts = () => getProducts(); 
 export const createProduct = (data) => {
     const product = new Product
         (

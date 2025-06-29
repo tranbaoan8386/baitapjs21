@@ -25,7 +25,7 @@
             <button id="close-btn" class="close-sidebar"><i class="fas fa-times"></i></button>
             <div class="d-flex align-items-center justify-content-center border-bottom">
                 <img class="img-logo" style="width: 100px;" src="../../public/img/logo.png" alt="">
-                <span class="user-info">NVH SHOP</span>
+                <span class="user-info">NVHBA SHOP</span>
             </div>
             <div class="menu mt-3">
                 <ul class="list-group">
@@ -99,7 +99,12 @@
                 <button id="toggle-btn" class="btn btn-sm me-2">
                     <i class="fas fa-bars"></i>
                 </button>
-                <input type="text" class="form-control w-50" placeholder="Search...">
+                <div class="search-box w-50">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Tìm sản phẩm..." />
+                    <span class="clear-button" onclick="clearSearch()">X</span>
+                    <i class="search-icon fa fa-search" onclick="handleSearch()"></i>
+                </div>
+
                 <div class="menu-icons">
                     <i class="fas fa-circle"></i>
                     <i class="fas fa-circle"></i>
@@ -110,10 +115,18 @@
                 <div class="card">
                     <div class="card-header text-center d-flex justify-content-between align-content-center">
                         <h4 class="p-2">Quản lý sản phẩm</h4>
-                        <button type="button" class="btn btn-bg" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Thêm mới
-                        </button>
+                        <div class="d-flex justify-content-between align-content-center">
+                            <button type="button" class="btn btn-bg" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Thêm mới
+                            </button>
+                        </div>
                     </div>
+                    <select id="sortPrice" class="form-select mb-2 me-2" onchange="renderProducts(currentPage)">
+                        <option value="">-- Sắp xếp theo giá --</option>
+                        <option value="asc">Giá tăng dần</option>
+                        <option value="desc">Giá giảm dần</option>
+                    </select>
                     <!-- modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
@@ -166,8 +179,8 @@
                                         <label for="" class="form-label">Loại sản phẩm:</label>
                                         <select class="form-select" id="type" aria-label="Chọn loại sản phẩm">
                                             <option selected disabled>Chọn loại sản phẩm</option>
-                                            <option value="iphone">Iphone</option>
-                                            <option value="samsung">Samsung</option>
+                                            <option value="Iphone">Iphone</option>
+                                            <option value="Samsung">Samsung</option>
                                         </select>
                                     </div>
                                     <div class="mb-3">
@@ -179,6 +192,7 @@
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Đóng</button>
                                     <button type="button" id="btnThemSP" class="btn btn-primary">Thêm mới</button>
+                                    <button type="button" id="btnEditSP" class="btn btn-primary">Cập Nhật</button>
                                 </div>
                             </div>
                         </div>
