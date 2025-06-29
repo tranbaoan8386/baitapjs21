@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.error("Lỗi khi tải sản phẩm:", error);
   }
+});
+
 
   // Tìm kiếm
   const searchInput = document.getElementById("searchInput");
