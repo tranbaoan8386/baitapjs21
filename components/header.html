@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-lg shadow-sm sticky-top">
+  <div class="container">
+    <!-- Logo -->
+    <a
+      class="navbar-brand fw-bold d-flex align-items-center"
+      href="/NVHBASHOP/index.html"
+    >
+      <img src="/NVHBASHOP/public/img/logo.png" width="40" class="me-2" />
+      <span class="logo-gradient-text">NVHBA SHOP</span>
+    </a>
+
+    <!-- Nút toggle cho mobile -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nội dung navbar -->
+    <div
+      class="collapse navbar-collapse justify-content-between"
+      id="navbarNav"
+    >
+      <!-- Bên trái: Trang chủ -->
+      <ul class="navbar-nav me-2">
+        <li class="nav-item">
+          <a href="/NVHBASHOP/index.html" class="btn btn-outline-dark">
+            <i class="fas fa-house me-1"></i> Trang chủ
+          </a>
+        </li>
+      </ul>
+
+      <!-- Form tìm kiếm ở giữa -->
+      <form class="d-flex w-100 mx-lg-4 my-2 my-lg-0" style="max-width: 400px">
+        <input
+          id="searchInput"
+          class="form-control me-2"
+          type="search"
+          placeholder="Tìm kiếm..."
+        />
+        <button class="btn btn-outline-dark" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <!-- Bên phải: Giỏ hàng (có dropdown) + Đăng nhập -->
+      <div class="d-flex align-items-center gap-2">
+        <div class="dropdown">
+          <a
+            class="btn btn-outline-dark position-relative dropdown-toggle"
+            href="#"
+            role="button"
+            id="cartDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-shopping-cart"></i>
+            <span
+              id="cartCount"
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+              0
+            </span>
+          </a>
+
+          <ul
+            class="dropdown-menu dropdown-menu-end p-2"
+            aria-labelledby="cartDropdown"
+            style="min-width: 300px"
+          >
+            <li><strong>Giỏ hàng</strong></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <div id="cartDropdownItems">
+                <p class="text-muted m-0">Chưa có sản phẩm nào.</p>
+              </div>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a
+                href="/NVHBASHOP/views/user/cart.html"
+                class="btn btn-sm btn-dark w-100"
+                >Xem giỏ hàng</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <a href="#" class="btn btn-dark">Đăng nhập</a>
+      </div>
+    </div>
+  </div>
+</nav>
