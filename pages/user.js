@@ -1,5 +1,5 @@
-import { getProducts } from '../../services/api.js';
-import { updateCartCount } from '../../utils/cart.js';
+import { getProducts } from '../services/api.js';
+import { updateCartCount } from '../utils/cart.js';
 
 let allProducts = [];
 
@@ -16,7 +16,7 @@ function renderProducts(products) {
           <h5 class="card-title">${p.name}</h5>
           <p class="card-text text-muted">Giá: <strong>${Number(p.price).toLocaleString()}₫</strong></p>
           <p class="card-text small">${p.desc}</p>
-          <a href="/NVHBASHOP/front_end/views/user/detail.html?id=${p.id}" class="btn btn-primary mt-auto">Xem chi tiết</a>
+          <a href="/NVHBASHOP/views/user/detail.html?id=${p.id}" class="btn btn-primary mt-auto">Xem chi tiết</a>
         </div>
       </div>
     </div>

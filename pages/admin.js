@@ -5,9 +5,9 @@ import {
   removeProduct,
   editProduct,
   fetchProductById
-} from '../../controllers/admin/productController.js';
-import { getDataForm, resetForm } from '../../utils/form.js';
-import { validate } from '../../utils/validate.js';
+} from '../controllers/admin/productController.js';
+import { getDataForm, resetForm } from '../utils/form.js';
+import { validate } from '../utils/validate.js';
 const notyf = new Notyf({
   duration: 3000,
   position: {

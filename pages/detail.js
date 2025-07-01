@@ -1,6 +1,6 @@
 // pages/detail.js
 import axios from "https://cdn.jsdelivr.net/npm/axios@1.6.8/+esm";
-import { updateCartCount } from "../../utils/cart.js";
+import { updateCartCount } from "../utils/cart.js";
 
 
 const params = new URLSearchParams(window.location.search);

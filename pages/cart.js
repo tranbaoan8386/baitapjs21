@@ -1,4 +1,4 @@
-import { updateCartCount } from "../../utils/cart.js";
+import { updateCartCount } from "../utils/cart.js";
 
 const cartContainer = document.getElementById("cartContainer");
 const notyf = new Notyf();
